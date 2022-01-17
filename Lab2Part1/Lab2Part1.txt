@@ -1,0 +1,17 @@
+Lab 2 Part 1:
+
+Question 1)
+
+First loads $FF into the register and stores that into port H to configure it to output. It then enables the pull-up resistors to get a steady high logic signal.
+It then loads SW1 into the LED1 connected to port H through the use of the register. This goes on for a continuous loop making the LEDs stay on consistently.
+
+Question 2)
+
+First, the LEDs in port P are configured to give off output by setting port P to %11111111. Pin PE4 must be configured on its own so it is also enabled.
+Next, BCLR is used to enable the keypad. A key code is inputted into AccA so it can be displayed on LED2 while being shifted. The shifts and output is looped to show a continuous routine.
+
+Question 3)
+
+In order to generate a sound tone, Port P is first set to give off outputs. Then the register is prepared to drive a high signal by setting it to %10000000.
+Now the buzzer is ready to output sound. This is done by driving PP7 and initializing a counter that decrements with a delay to make the alternating of 1's and 0's.
+Once the counter reaches zero, the most significant bit of AccA will be set again and start the loop of driving PP7 once again. This will repeatedly play the buzzer sound.
